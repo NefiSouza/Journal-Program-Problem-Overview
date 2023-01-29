@@ -17,8 +17,8 @@ class Program
             Console.Write("input > ");
             string string_answer = Console.ReadLine();
             Console.WriteLine("");
-            int reponse = int.Parse(string_answer);
-            return reponse;
+            int answer = int.Parse(string_answer);
+            return answer;
         }
 
         // * Ive commented this out for now. 
@@ -33,7 +33,7 @@ class Program
 
         // ! Declaring variables 
 
-        int reponse = 5; 
+        int answer = 5; 
 
         string prompt = "";
 
@@ -75,8 +75,8 @@ class Program
 
         do
         {
-            reponse = Menu();
-            if (reponse == 1)
+            answer = Menu();
+            if (answer == 1)
             { 
                 string phrase = getPrompt(prompts);
                 Console.WriteLine(phrase);
@@ -93,25 +93,25 @@ class Program
 
                 // WriteFunction()
             }
-            else if (reponse == 2)
+            else if (answer == 2)
             {
                 newJournal.DisplayList();
             }
-            else if (reponse == 3)
+            else if (answer == 3)
             {
                 newJournal.Load();
             }
-            else if (reponse == 4)
+            else if (answer == 4)
             {
                 newJournal.Save();
             }
-            else if (reponse == 5)
+            else if (answer == 5)
             {
                 string dafile = "schedule.txt";
                 bool hasLines = !File.ReadLines(dafile).Any();
                 if (hasLines == false)
                 {
-                    Console.WriteLine("Here is your previous scheduling: ");
+                    Console.WriteLine("This is your previous scheduling: ");
                     Console.WriteLine(" "); 
                     dafile = "schedule.txt";
                     
@@ -138,7 +138,7 @@ class Program
 
                 Console.WriteLine("Your schedule has been updated.");
             }
-            else if (reponse == 6)
+            else if (answer == 6)
             {
 
                 Console.WriteLine("Remember your schedule! ");
@@ -156,6 +156,10 @@ class Program
             }
             Console.WriteLine("");
 
-        }   while (reponse != 6);
+        }   while (answer != 6);
     }
+}
+
+internal class Journal
+{
 }
